@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resume Assistant</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Resume Assistant</h1>
+      <div class="actions">
+        <button id="autofill">自动填表</button>
+        <button id="logSubmit">记录本次投递</button>
+      </div>
+
+      <section>
+        <h2>投递进度</h2>
+        <div id="metrics" class="metrics"></div>
+      </section>
+
+      <section>
+        <h2>最近投递</h2>
+        <ul id="applications"></ul>
+      </section>
+
+      <footer>
+        <a href="../options/options.html" target="_blank">编辑简历资料</a>
+      </footer>
+    </main>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

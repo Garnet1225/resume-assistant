@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: #f8fafc;
+  width: 360px;
+}
+
+main {
+  padding: 12px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+h2 {
+  margin: 12px 0 6px;
+  font-size: 14px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.metric {
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+.metric .label {
+  color: #475569;
+  font-size: 12px;
+}
+
+.metric .value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+li {
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.muted {
+  color: #64748b;
+  font-size: 12px;
+}

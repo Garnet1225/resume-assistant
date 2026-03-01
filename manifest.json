@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Resume Assistant",
+  "description": "自动填写求职表单、记录投递、汇总进度的浏览器插件。",
+  "version": "0.1.0",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Resume Assistant",
+    "default_popup": "popup/popup.html"
+  },
+  "options_page": "options/options.html",
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content/form-filler.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

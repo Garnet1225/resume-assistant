@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>个人简历数据库</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>个人简历数据库（结构化）</h1>
+      <p class="tips">用于程序自动调用与在线表单填写。复杂模块支持 JSON 数组录入（每段经历单独成条）。</p>
+
+      <form id="profileForm">
+        <section>
+          <h2>一、基本信息</h2>
+          <div class="grid two-cols" id="basicInfoFields"></div>
+        </section>
+
+        <section>
+          <h2>二、联系方式</h2>
+          <div class="grid two-cols" id="contactInfoFields"></div>
+        </section>
+
+        <section>
+          <h2>三、教育经历（每段单独成条）</h2>
+          <p class="help">字段：学校、学院、专业、学位、培养方式、起止时间、所在地、GPA、排名、主修课程、荣誉、论文题目/摘要、导师。</p>
+          <textarea id="educationExperiences" rows="10"></textarea>
+        </section>
+
+        <section>
+          <h2>四、工作经历（每段单独成条）</h2>
+          <p class="help">字段：单位、行业、部门、岗位、性质、时间、地点、汇报对象、团队规模、职责、成果、工具、技术、贡献、协作、带队、客户对接。</p>
+          <textarea id="workExperiences" rows="12"></textarea>
+        </section>
+
+        <section>
+          <h2>五、项目经历（每个项目单独成条）</h2>
+          <p class="help">字段：项目名称、类别、角色、人数、周期、工具、硬件、编程说明、背景、研究方法、策略、创新、制造、测试、迭代、成果、应用结果、获奖、专利、论文。</p>
+          <textarea id="projectExperiences" rows="12"></textarea>
+        </section>
+
+        <section>
+          <h2>六、专业技能</h2>
+          <div class="grid one-col" id="professionalSkillsFields"></div>
+        </section>
+
+        <section>
+          <h2>七、科研与成果</h2>
+          <div class="grid one-col" id="researchFields"></div>
+        </section>
+
+        <section>
+          <h2>八、语言能力</h2>
+          <div class="grid two-cols" id="languageFields"></div>
+        </section>
+
+        <section>
+          <h2>九、附件材料</h2>
+          <div class="grid one-col" id="attachmentFields"></div>
+        </section>
+
+        <section>
+          <h2>十、常见问答库（中英文 200/500/1000 字）</h2>
+          <p class="help">建议填入可直接粘贴到招聘系统的问题答案。</p>
+          <div id="qaFields" class="grid one-col"></div>
+        </section>
+
+        <section>
+          <h2>十一、岗位匹配模块</h2>
+          <div class="grid one-col" id="jobMatchingFields"></div>
+        </section>
+
+        <section>
+          <div class="row-between">
+            <h2>自定义字段</h2>
+            <button type="button" id="addCustomField" class="secondary">+ 添加字段</button>
+          </div>
+          <p class="help">填写字段名、字段值、匹配关键词（逗号分隔），匹配到网页字段时自动填充。</p>
+          <div id="customFields"></div>
+        </section>
+
+        <button type="submit">保存数据库</button>
+      </form>
+      <p id="status"></p>
+    </main>
+
+    <template id="customFieldTemplate">
+      <div class="custom-item">
+        <label>字段名称<input data-key="label" required /></label>
+        <label>字段值<input data-key="value" /></label>
+        <label>匹配关键词（逗号分隔）<input data-key="hints" /></label>
+        <button type="button" class="danger" data-action="remove">删除</button>
+      </div>
+    </template>
+
+    <script src="options.js" type="module"></script>
+  </body>
+</html>
